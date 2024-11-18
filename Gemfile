@@ -6,6 +6,8 @@ gem "rails", "~> 7.2.0"
 gem "sqlite3", ">= 1.4"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
+gem "slack-ruby-client"
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
@@ -31,7 +33,9 @@ gem "bootsnap", require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
+  gem "byebug"
+  gem "dotenv-rails"
+  gem "rubocop", require: false
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
@@ -39,5 +43,3 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 end
-
-
