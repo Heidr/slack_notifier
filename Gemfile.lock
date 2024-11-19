@@ -81,17 +81,32 @@ GEM
     brakeman (6.2.2)
       racc
     builder (3.3.0)
+    byebug (11.1.3)
     concurrent-ruby (1.3.4)
     connection_pool (2.4.1)
     crass (1.0.6)
     date (3.4.0)
-    debug (1.9.2)
-      irb (~> 1.10)
-      reline (>= 0.3.8)
+    dotenv (3.1.4)
+    dotenv-rails (3.1.4)
+      dotenv (= 3.1.4)
+      railties (>= 6.1)
     drb (2.2.1)
     erubi (1.13.0)
+    faraday (2.12.1)
+      faraday-net_http (>= 2.0, < 3.5)
+      json
+      logger
+    faraday-mashify (0.1.1)
+      faraday (~> 2.0)
+      hashie
+    faraday-multipart (1.0.4)
+      multipart-post (~> 2)
+    faraday-net_http (3.4.0)
+      net-http (>= 0.5.0)
+    gli (2.22.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    hashie (5.0.0)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
     io-console (0.7.2)
@@ -113,6 +128,9 @@ GEM
     mini_mime (1.1.5)
     minitest (5.25.1)
     msgpack (1.7.5)
+    multipart-post (2.4.1)
+    net-http (0.5.0)
+      uri
     net-imap (0.5.1)
       date
       net-protocol
@@ -217,6 +235,12 @@ GEM
       rubocop-rails
     ruby-progressbar (1.13.0)
     securerandom (0.3.2)
+    slack-ruby-client (2.4.0)
+      faraday (>= 2.0)
+      faraday-mashify
+      faraday-multipart
+      gli
+      hashie
     sqlite3 (2.2.0-aarch64-linux-gnu)
     sqlite3 (2.2.0-aarch64-linux-musl)
     sqlite3 (2.2.0-arm-linux-gnu)
@@ -233,6 +257,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.6.0)
+    uri (1.0.2)
     useragent (0.16.10)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
@@ -258,10 +283,13 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   brakeman
-  debug
+  byebug
+  dotenv-rails
   puma (>= 5.0)
   rails (~> 7.2.0)
+  rubocop
   rubocop-rails-omakase
+  slack-ruby-client
   sqlite3 (>= 1.4)
   tzinfo-data
 
